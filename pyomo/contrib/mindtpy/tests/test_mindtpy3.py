@@ -24,15 +24,14 @@ class TestMindtPy(unittest.TestCase):
     def test_model(self):
         """Test the MindtPy implementation."""
         with SolverFactory('mindtpy') as opt:
-            print('\n Solving problem with selected strategy')
+            print('\n Solving problem with selected decomposition strategy')
             mip_options = {'threads':4}
             opt.solve(model
                 , strategy='OA'
-                , init_strategy = 'inintial_binary'
-                , mip = 'cplex'
-                , iterlim = 13
-                , mip_kwargs = mip_options
-                )
+                , init_strategy = 'initial_binary'
+                , mip_solver = 'cplex'
+                , iteration_limit = 13
+                , mip_solver_kwargs = mip_options)
             # model.pprint()
     
             # self.assertIs(results.solver.termination_condition,
