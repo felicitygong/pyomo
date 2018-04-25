@@ -549,7 +549,7 @@ class MindtPySolver(pyomo.util.plugin.Plugin):
             if self.LB + self.bound_tolerance >= self.UB:
                 print('MindtPy exiting on bound convergence. '
                       'LB: {} + (tol {}) >= UB: {}'.format(
-                          self.LB, self.bound_tolerance, self.UB) + '\n')
+                          self.LB, self.bound_tolerance, self.UB))
                 # res.solver.termination_condition = tc.optimal
                 break
             # Check iteration limit
